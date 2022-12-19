@@ -1,0 +1,118 @@
+﻿@model FBCOMSystemManagement.Models.Installation
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="text-center"> Details client</h1>
+<br />
+
+<div class="card">
+    <dl class="row m-1">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClientAdress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClientAdress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactPhone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ville)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ville)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ICCID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ICCID)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NGSM)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NGSM)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CompteSIP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CompteSIP)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdConnexion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdConnexion)
+        </dd>
+
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Offre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Offre)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Distributeur)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Distributeur)
+        </dd>
+
+
+    </dl>
+</div>
+
+ 
+
+
+<div class="card">
+    <dl class="row m-1">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Installed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Installed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary">
+        <a asp-action="EditPreinstallation" asp-route-id="@Model?.ID" class="text-white">modifier <i class="bi bi-pencil-square"> </i> </a>
+    </button>
+    <button type="button" class="btn btn-danger">
+        <a asp-action="IndexPreinstallation" class="text-white">Annuler</a>
+    </button>
+</div>

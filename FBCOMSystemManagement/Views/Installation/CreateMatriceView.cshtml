@@ -1,0 +1,49 @@
+﻿@model FBCOMSystemManagement.VIEWMODEL.MatriceVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col d-flex justify-content-center">
+
+
+    <div class="card align-items-center" style="width: 30rem;">
+        <h1 class="text-center">Télécharger matrice</h1>
+
+        <form asp-action="CreateMatrice">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="date1" class="control-label"></label>
+                <input asp-for="date1" class="form-control" />
+                <span asp-validation-for="date1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date2" class="control-label"></label>
+                <input asp-for="date2" class="form-control" />
+                <span asp-validation-for="date2" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group text-center">
+                <input type="submit" value="Valider" class="btn btn-primary" />
+                <button type="button" class="btn btn-danger">
+                    <a asp-action="Index" asp-controller="Home" class="text-white">Annuler</a>
+                </button>
+            </div>
+
+        </form>
+        <br />
+        <br />
+        <br />
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_Validation");
+
+
+    }
+}

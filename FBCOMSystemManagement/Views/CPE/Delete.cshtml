@@ -1,0 +1,64 @@
+﻿@model FBCOMSystemManagement.Models.CPE
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<div class="card">
+    <h3 class="text-center">Vous êtes sur de supprimer ce CPE?</h3>
+    <br />
+    <input type="hidden" asp-for="ID" />
+    <dl class="row m-1">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SNAntenne) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SNAntenne)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SNRouteur) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SNRouteur)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IMEI) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IMEI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateAjout) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateAjout)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Installed) :
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Installed)
+        </dd>
+    </dl>
+    <br />
+    <form asp-action="Delete" class="text-center">
+        <input type="hidden" asp-for="ID" />
+        <button type="submit" class="btn btn-danger">
+          Confirmer
+        </button>
+
+        <button type="button" class="btn btn-primary">
+            <a asp-action="Index" class="text-white">Annuler</a>
+        </button>
+     
+    </form>
+    <br />
+</div>

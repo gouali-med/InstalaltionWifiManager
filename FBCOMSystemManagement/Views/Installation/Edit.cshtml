@@ -1,0 +1,416 @@
+﻿@model FBCOMSystemManagement.VIEWMODEL.InstallationVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center">Modifier l'installation</h1>
+<br />
+<br />
+
+
+<div class="row">
+    <div>
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="row  m-1 block">
+                    <div class="col-md-1 col-sm-12">
+                        <label asp-for="ID" class="control-label"></label>
+                        <input readonly asp-for="ID" class="form-control" />
+                        <span asp-validation-for="ID" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="ClientName" class="control-label"></label>
+                        <input readonly asp-for="ClientName" class="form-control" />
+                        <span asp-validation-for="ClientName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-7 col-sm-12">
+                        <label asp-for="ClientAdress" class="control-label"></label>
+                        <input readonly asp-for="ClientAdress" class="form-control" />
+                        <span asp-validation-for="ClientAdress" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="row  m-1 block">
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="ContactName" class="control-label"></label>
+                        <input readonly asp-for="ContactName" class="form-control" />
+                        <span asp-validation-for="ContactName" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="ContactPhone" class="control-label"></label>
+                        <input readonly asp-for="ContactPhone" class="form-control" />
+                        <span asp-validation-for="ContactPhone" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="Ville" class="control-label"></label>
+                        <input readonly asp-for="Ville" class="form-control" />
+                        <span asp-validation-for="Ville" class="text-danger"></span>
+                    </div>
+
+
+
+                </div>
+                <div class="row  m-1 block">
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="TypeCient" class="control-label"></label>
+                        <input readonly asp-for="TypeCient" class="form-control" />
+                        <span asp-validation-for="TypeCient" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="ICCID" class="control-label"></label>
+                        <input readonly asp-for="ICCID" class="form-control" />
+                        <span asp-validation-for="ICCID" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="NGSM" class="control-label"></label>
+                        <input readonly asp-for="NGSM" class="form-control" />
+                        <span asp-validation-for="NGSM" class="text-danger"></span>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+                <div class="row  m-1 block">
+
+                    <div class="col-md-3 col-sm-12">
+                        <label asp-for="CompteSIP" class="control-label"></label>
+                        <input readonly asp-for="CompteSIP" class="form-control" />
+                        <span asp-validation-for="CompteSIP" class="text-danger"></span>
+
+
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+
+                        <label asp-for="IdConnexion" class="control-label"></label>
+                        <input readonly asp-for="IdConnexion" class="form-control" />
+                        <span asp-validation-for="IdConnexion" class="text-danger"></span>
+
+
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+
+                        <label asp-for="Offre" class="control-label"></label>
+                        <input readonly asp-for="Offre" class="form-control" />
+                        <span asp-validation-for="Offre" class="text-danger"></span>
+
+
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <label asp-for="Distributeur" class="control-label"></label>
+                        <input readonly asp-for="Distributeur" class="form-control" />
+                        <span asp-validation-for="Distributeur" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br />
+            </div>
+            <br />
+            <br />
+            @* §§§§§§§§  installation /§§§§§§ *@
+
+
+            <div class="card">
+                <div class="row  m-1 block">
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="GPSLatitude" class="control-label"></label>
+                        <input asp-for="GPSLatitude" class="form-control" />
+                        <span asp-validation-for="GPSLatitude" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="GPSLongitude" class="control-label"></label>
+                        <input asp-for="GPSLongitude" class="form-control" />
+                        <span asp-validation-for="GPSLongitude" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="Etage" class="control-label"></label>
+                        <select name="Etage" id="dropDown" onchange="showValues()">
+                            <option name="Etage" value="RDC"> RDC </option>
+                            <option name="Etage" value="1 ETAGE"> 1 ETAGE </option>
+                            <option name="Etage" value="2 ETAGE"> 2 ETAGE </option>
+                            <option name="Etage" value="3 ETAGE"> 3 ETAGE </option>
+                            <option name="Etage" value="4 ETAGE"> 4 ETAGE </option>
+                            <option name="Etage" value="5 ETAGE"> 5 ETAGE </option>
+                            <option name="Etage" value="6 ETAGE"> 6 ETAGE </option>
+                            <option name="Etage" value="7 ETAGE"> 7 ETAGE </option>
+                            <option name="Etage" value="8 ETAGE"> 8 ETAGE </option>
+                        </select>
+                        <span asp-validation-for="Etage" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="Emplacement" class="control-label"></label>
+                        <select name="Emplacement" id="dropDown" onchange="showValues()">
+                            <option name="Emplacement" value="FACADE"> FACADE </option>
+                            <option name="Emplacement" value="TOIT"> TOIT </option>
+                        </select>
+                        <span asp-validation-for="Emplacement" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="Immeublefibre" class="control-label"></label>
+                        <select name="Immeublefibre" id="dropDown" onchange="showValues()">
+                            <option name="Immeublefibre" value="NON"> NON </option>
+                            <option name="Immeublefibre" value="OUI"> OUI </option>
+                        </select>
+                        <span asp-validation-for="Immeublefibre" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="TelephoneBluetooth" class="control-label"></label>
+                        <select name="TelephoneBluetooth" id="dropDown" onchange="showValues()">
+                            <option name="TelephoneBluetooth" value="NON"> NON </option>
+                            <option name="TelephoneBluetooth" value="OUI"> OUI </option>
+                        </select>
+                        <span asp-validation-for="TelephoneBluetooth" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+
+
+                <br />
+                <br />
+                <div class="row  m-1 block">
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="IMSI" class="control-label"></label>
+                        <input asp-for="IMSI" class="form-control" />
+                        <span asp-validation-for="IMSI" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="eNodeBID" class="control-label"></label>
+                        <input asp-for="eNodeBID" class="form-control" />
+                        <span asp-validation-for="eNodeBID" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="CELLband" class="control-label"></label>
+                        <input asp-for="CELLband" class="form-control" />
+                        <span asp-validation-for="CELLband" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="RSRP" class="control-label"></label>
+                        <input asp-for="RSRP" class="form-control" />
+                        <span asp-validation-for="RSRP" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="SINR" class="control-label"></label>
+                        <input asp-for="SINR" class="form-control" />
+                        <span asp-validation-for="SINR" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="BandAuto" class="control-label"></label>
+                        <input asp-for="BandAuto" class="form-control" />
+                        <span asp-validation-for="BandAuto" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+
+
+
+                <div class="row  m-1 block">
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="PRB_BH" class="control-label"></label>
+                        <input asp-for="PRB_BH" class="form-control" />
+                        <span asp-validation-for="PRB_BH" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="PRB_NBH" class="control-label"></label>
+                        <input asp-for="PRB_NBH" class="form-control" />
+                        <span asp-validation-for="PRB_NBH" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="Speed1" class="control-label"></label>
+                        <input asp-for="Speed1" class="form-control" />
+                        <span asp-validation-for="Speed1" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="Speed2" class="control-label"></label>
+                        <input asp-for="Speed2" class="form-control" />
+                        <span asp-validation-for="Speed2" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label asp-for="Speed3" class="control-label"></label>
+                        <input asp-for="Speed3" class="form-control" />
+                        <span asp-validation-for="Speed3" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+                <br />
+            </div>
+            <br /> <br />
+
+            <div class="card">
+
+                <div class="row  m-1 block">
+
+                    <div class="col-md-4 col-sm-12">
+
+                        <label asp-for="StatueScreen" class="control-label"></label>
+
+                        <div class="custom-file">
+                            <input type="file" asp-for="StatueScreen" name="StatueScreen" class="custom-file-input" type="file">
+                        </div>
+                        <span asp-validation-for="StatueScreen" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="SNRScreen" class="control-label"></label>
+                        <input type="file" name="SNRScreen" asp-for="SNRScreen" class="form-control" />
+                        <span asp-validation-for="SNRScreen" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="SpeedScreen" class="control-label"></label>
+                        <input type="file" name="SpeedScreen" asp-for="SpeedScreen" class="form-control" />
+                        <span asp-validation-for="SpeedScreen" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br /> <br />
+
+                <div class="row  m-1 block">
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="LTEScreen" class="control-label"></label>
+                        <input type="file" name="LTEScreen" asp-for="LTEScreen" class="form-control" />
+                        <span asp-validation-for="LTEScreen" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="VoipScreen" class="control-label"></label>
+                        <input type="file" name="VoipScreen" asp-for="VoipScreen" class="form-control" />
+                        <span asp-validation-for="VoipScreen" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="PVPicture" class="control-label"></label>
+                        <input type="file" name="PVPicture" asp-for="PVPicture" class="form-control" />
+                        <span asp-validation-for="PVPicture" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br /> <br />
+                <div class="row  m-1 block">
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="PictureInside" class="control-label"></label>
+                        <input type="file" name="PictureInside" asp-for="PictureInside" class="form-control" />
+                        <span asp-validation-for="PictureInside" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="PictureOutside" class="control-label"></label>
+                        <input type="file" name="PictureOutside" asp-for="PictureOutside" class="form-control" />
+                        <span asp-validation-for="PictureOutside" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="PictureOutside2" class="control-label"></label>
+                        <input type="file" name="PictureOutside2" asp-for="PictureOutside" class="form-control" />
+                        <span asp-validation-for="PictureOutside2" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div class="row  m-1 block">
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="CarteCINRecto" class="control-label"></label>
+                        <input type="file" name="CarteCINRecto" asp-for="CarteCINRecto" class="form-control" />
+                        <span asp-validation-for="CarteCINRecto" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="CarteCINVerso" class="control-label"></label>
+                        <input type="file" name="CarteCINVerso" asp-for="CarteCINVerso" class="form-control" />
+                        <span asp-validation-for="CarteCINVerso" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <br />
+            </div>
+
+
+
+            <div class="card" style="display:none">
+
+                            <input  asp-for="StatueScreenURL" name="StatueScreenURL" class="custom-file-input">
+
+                        <input  name="SNRScreenURL" asp-for="SNRScreenURL" class="form-control" />
+
+                        <input  name="SpeedScreenURL" asp-for="SpeedScreenURL" class="form-control" />
+
+                        <input  name="LTEScreenURL" asp-for="LTEScreenURL" class="form-control" />
+
+                        <input  name="VoipScreenURL" asp-for="VoipScreenURL" class="form-control" />
+
+                        <input  name="PVPictureURL" asp-for="PVPictureURL" class="form-control" />
+
+                        <input  name="PictureInsideURL" asp-for="PictureInsideURL" class="form-control" />
+
+                        <input  name="PictureOutsideURL" asp-for="PictureOutsideURL" class="form-control" />
+
+                        <input  name="PictureOutside2URL" asp-for="PictureOutsideURL" class="form-control" />
+ 
+                        <input  name="CarteCINRectoURL" asp-for="CarteCINRectoURL" class="form-control" />
+
+                        <input  name="CarteCINVersoURL" asp-for="CarteCINVersoURL" class="form-control" />
+
+            </div>
+
+
+
+            <br /> <br />
+
+            <div class="card">
+                <div class="row  m-1 block">
+
+
+                    <div class="col-md-4 col-sm-12">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+            </div>
+            <br /> <br /> <br />
+
+
+
+
+
+            <div class="row  m-1 block  d-flex justify-content-center">
+
+                <div class="col-md-1 col-sm-12">
+                    <input type="submit" value="Valider" class="btn btn-primary" />
+                </div>
+                <div class="col-md-1 col-sm-12 ms-2">
+                    <a class="btn btn-danger" asp-action="Index">Annuler</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+
+    <partial name="_Validation" />
+
+
+}

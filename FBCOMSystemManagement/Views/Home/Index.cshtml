@@ -1,0 +1,29 @@
+﻿@model FBCOMSystemManagement.VIEWMODEL.HomeStatistics
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-xl-between">
+
+    <div class="card align-items-center " style="width: 17rem;height:10rem">
+        <h1>
+            Téléphone
+        </h1>
+        <h2> @Html.DisplayFor(model => model.telephone) </h2>
+    </div>
+
+    <div class="card align-items-center" style="width: 17rem;height:10rem">
+        <h1>
+            CPE
+        </h1>
+        <h2> @Html.DisplayFor(model => model.cpe)</h2>
+    </div>
+
+
+    <div class="card align-items-center" style="width: 17rem;height:10rem">
+        <h1>
+            Installations
+        </h1>
+        <h2> @Html.DisplayFor(model => model.instalation) </h2>
+    </div>
+</div>

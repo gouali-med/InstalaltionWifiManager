@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FBCOMSystemManagement.Models.Installation>
+
+@{
+    ViewData["Title"] = "Liste des installations";
+}
+
+<h1 class="text-center">Liste des SNRs négative</h1>
+<br />
+<br />
+
+
+
+<br />
+<table class="table table-info table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientAdress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactPhone)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactPhone)
+            </td>
+
+     
+ 
+            <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="text-dark">modifier <i class="bi bi-pencil-square"> </i> </a> |
+                    <a asp-action="Details" asp-route-id="@item.ID" class="text-dark">Détails <i class="bi bi-card-list"></i></a>|
+                    <a asp-action="CreateRapport" asp-route-id="@item.ID" class="text-dark">rapport <i class="bi bi-file-arrow-down"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

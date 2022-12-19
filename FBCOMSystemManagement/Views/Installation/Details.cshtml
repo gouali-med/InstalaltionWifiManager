@@ -1,0 +1,194 @@
+﻿@model FBCOMSystemManagement.Models.Installation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+
+
+    <h1 class="text-center"> Details Installation</h1>
+    <br />
+
+    <div class="card">
+        <dl class="row m-1">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ClientName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ClientName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ClientAdress)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ClientAdress)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ContactName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContactName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ContactPhone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContactPhone)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ville)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ville)
+            </dd>
+            </dl>
+    </div>
+
+    </div>
+
+<div class="card">
+    <dl class="row m-1">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Etage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Etage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Emplacement)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emplacement)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Immeublefibre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Immeublefibre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TelephoneBluetooth)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TelephoneBluetooth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IMSI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IMSI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Speed1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Speed1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Speed2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Speed2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Speed3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Speed3)
+        </dd>
+
+        </dl>
+        </div>
+<div class="card">
+    <dl class="row m-1">
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.eNodeBID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.eNodeBID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CELLband)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CELLband)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RSRP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RSRP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SINR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SINR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BandAuto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BandAuto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PRB_BH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PRB_BH)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PRB_NBH)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PRB_NBH)
+        </dd>
+</div>
+        <div class="card">
+    <dl class="row m-1">
+
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SNRNegative)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SNRNegative)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Installed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Installed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CPE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CPE.ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telephone.ID)
+        </dd>
+    </dl>
+</div>
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary">
+        <a asp-action="Edit" asp-route-id="@Model?.ID" class="text-white">modifier <i class="bi bi-pencil-square"> </i> </a>
+    </button>
+    <button type="button" class="btn btn-danger">
+        <a asp-action="Index" class="text-white">Annuler</a>
+    </button>
+</div>

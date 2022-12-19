@@ -1,0 +1,108 @@
+﻿@model FBCOMSystemManagement.Models.Installation
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="col d-flex justify-content-center">
+
+
+    <div class="card align-items-center" style="width: 30rem;">
+        <h1 class="text-center">Modifier un client</h1>
+        <br />
+        <br />
+        <form asp-action="EditPreinstallation">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row   block">
+                <div class="col-md-6 col-sm-12">
+                    <label asp-for="ClientName" class="control-label"></label>
+                    <input asp-for="ClientName" class="form-control" />
+                    <span asp-validation-for="ClientName" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label asp-for="TypeCient" class="control-label"></label>
+                    <br />
+                    <select name="TypeCient" id="dropDown" onchange="showValues()">
+                        <option name="TypeCient" value="Personnel"> Personnel </option>
+                        <option name="TypeCient" value="Entreprise"> Entreprise </option>
+                    </select>
+                    <span asp-validation-for="TypeCient" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientAdress" class="control-label"></label>
+                <input asp-for="ClientAdress" class="form-control" />
+                <span asp-validation-for="ClientAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactName" class="control-label"></label>
+                <input asp-for="ContactName" class="form-control" />
+                <span asp-validation-for="ContactName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactPhone" class="control-label"></label>
+                <input asp-for="ContactPhone" class="form-control" />
+                <span asp-validation-for="ContactPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ville" class="control-label"></label>
+                <input asp-for="Ville" class="form-control" />
+                <span asp-validation-for="Ville" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="ICCID" class="control-label"></label>
+                <input asp-for="ICCID" class="form-control" />
+                <span asp-validation-for="ICCID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NGSM" class="control-label"></label>
+                <input asp-for="NGSM" class="form-control" />
+                <span asp-validation-for="NGSM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompteSIP" class="control-label"></label>
+                <input asp-for="CompteSIP" class="form-control" />
+                <span asp-validation-for="CompteSIP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdConnexion" class="control-label"></label>
+                <input asp-for="IdConnexion" class="form-control" />
+                <span asp-validation-for="IdConnexion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Offre" class="control-label"></label>
+                <input asp-for="Offre" class="form-control" />
+                <span asp-validation-for="Offre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Distributeur" class="control-label"></label>
+                <input asp-for="Distributeur" class="form-control" />
+                <span asp-validation-for="Distributeur" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group text-center">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                <button type="button" class="btn btn-danger">
+                    <a asp-action="IndexPreinstallation" class="text-white">Annuler</a>
+                </button>
+            </div>
+
+        </form>
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_Validation");}
+}

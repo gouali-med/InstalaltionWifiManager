@@ -1,0 +1,99 @@
+﻿@model IEnumerable<FBCOMSystemManagement.Models.Installation>
+
+@{
+    ViewData["Title"] = "Planning Aujord'hui";
+}
+
+<h1 class="text-center">Planning </h1>
+
+<p>
+ 
+
+    <form class="form-inline d-flex justify-content-left md-form form-sm mt-0" asp-action="Index" asp-controller="Installation">
+
+        <button type="button" class="btn btn-success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"></path>
+            </svg>
+            <a asp-action="CreatePreinstallation" class="text-white">Ajouter</a>
+        </button>
+
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input class="form-control form-control-sm ml-3 w-25" style="margin-left:35em" type="text" placeholder="chercher un installation" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</p>
+
+
+
+
+    <div class="col-md-12 ">
+    <table class="table table-info table-bordered">
+        <thead class="table-dark">
+                <tr>
+                    <th class="col-1">
+                        @Html.DisplayNameFor(model => model.ClientName)
+                    </th>
+                    <th class="col-1">
+                        @Html.DisplayNameFor(model => model.ClientAdress)
+                    </th>
+                    <th class="col-1">
+                        @Html.DisplayNameFor(model => model.ContactName)
+                    </th>
+                    <th class="col-1">
+                        @Html.DisplayNameFor(model => model.ContactPhone)
+                    </th>
+
+                    <th class="col-1">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+
+                    <th class="col-3"></th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.ClientName)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.ClientAdress)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.ContactName)
+                        </td>
+                        <td>
+                                @Html.DisplayFor(modelItem => item.ContactPhone)
+                        </td>
+
+
+                        <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+
+                        <td>
+                        <a asp-action="EditPreinstallation" asp-route-id="@item.ID">
+                            <i class="bi bi-edit">Modifier</i>
+                        </a>|
+                        <a asp-action="DetailsPreinstallation" asp-route-id="@item.ID">
+                            <i class="bi bi-more">Détails</i>
+                        </a>|
+                        <a asp-action="DeletePreinstallation" asp-route-id="@item.ID">Supprimer
+                            <i class="bi bi-trash"></i>
+                        </a>|
+                        <a asp-controller="Installation" asp-action="Create" asp-route-id="@item.ID">
+                            Installer
+                                <i class="bi bi-save"></i>
+                            </a>
+                  
+                        </td>
+                    </tr>
+                    }
+           
+
+            </tbody>
+        </table>
+  
+</div>

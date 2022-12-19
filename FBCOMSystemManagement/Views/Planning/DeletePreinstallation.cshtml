@@ -1,0 +1,61 @@
+﻿@model FBCOMSystemManagement.Models.Installation
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center">Suppression</h1>
+
+<h3 class="text-center">Vous êtes sûr de supprimer ce client?</h3>
+<div class="card align-items-center m-5">
+    <br/>
+    <dl class="row p-5">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ClientName)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.ClientName)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ClientAdress)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ClientAdress)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Ville)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Ville)
+        </dd>
+
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+     
+    </dl>
+    <br />
+    <br />
+    <form asp-action="DeletePreinstallation">
+        <input type="hidden" asp-for="ID" />
+
+        <button type="submit" class="btn btn-danger">Confirmer <i class="bi bi-trash"> </i></button> |
+        <button type="button" class="btn btn-primary">
+            <a asp-action="IndexPreinstallation" class="text-white">Annuler</a>
+        </button>
+
+    </form>
+    <br />
+    <br />
+
+</div>
