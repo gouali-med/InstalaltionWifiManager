@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="text-center">Liste des Téléphones</h1>
+<h1 class="text-center">Liste des Téléphones  @ViewData["pageCount"] </h1>
 
 <p>
     <button type="button" class="btn btn-success">
@@ -59,3 +59,16 @@
 }
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        @for (int i = 0; i <Convert.ToInt16( ViewData["pageCount"].ToString()); i++)
+        {
+            <li class="page-item"><a class="page-link" asp-action="index" asp-route="@i">@i</a></li>
+
+        }
+   
+
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
