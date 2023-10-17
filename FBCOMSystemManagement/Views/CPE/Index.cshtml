@@ -1,7 +1,9 @@
-﻿@model IEnumerable<FBCOMSystemManagement.Models.CPE>
+﻿@model FBCOMSystemManagement.VIEWMODEL.CPEVM
 
 @{
     ViewData["Title"] = "Index";
+
+    int pageCount = Convert.ToInt16( ViewData["pageCount"]);
 }
 
 <h1 class="text-center">Liste des CPE</h1>
@@ -20,28 +22,29 @@
         
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SNAntenne)
+               SNAntenne
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SNRouteur)
+             SNRouteur
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IMEI)
+            IMEI
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+          Descriptin
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateAjout)
+           DateAjout
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Installed)
+              Installed
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model.ListCPE)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.SNAntenne)
@@ -71,3 +74,41 @@
 }
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+        @if (Model.pager.EndPage > 0)
+        {
+            <ul class="pagination">
+                <!--If Current page is not the First Page, we will show Button/Link to go First or on Previous page-->
+                @if (Model.pager.CurrentPage > 0)
+                {
+                <li class="page-item">
+                    <a class="page-link" asp-action="index">First</a>
+                    </li>
+                <li class="page-item">
+                    <a class="page-link" asp-action="index" asp-route-page="@(Model.pager.CurrentPage - 1)">Previous</a>
+                    </li>
+                }
+                <!--Paging from StartPage to the end Page-->
+                @for (int i = Model.pager.StartPage; i <= Model.pager.EndPage; i++)
+                {
+                    <li class="@(i == Model.pager.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-action="index" asp-route-page="@i">@i</a>
+                    </li>
+                }
+                <!--If Current Page is not the Last Page then show Next and Last Button/link on Paging-->
+                @if (Model.pager.CurrentPage < Model.pager.TotalPages)
+                {
+                <li class="page-item">
+                    <a class="page-link" asp-action="index" asp-route-page="@(Model.pager.CurrentPage + 1)">Next</a>
+                    </li>
+                <li class="page-item">
+                    <a class="page-link" asp-action="index" asp-route-page="@(Model.pager.TotalPages)">Last</a>
+                    </li>
+                }
+            </ul> 
+            }
+
+
+
+
+</nav>

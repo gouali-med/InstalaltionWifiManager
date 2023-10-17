@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FBCOMSystemManagement.DATA;
 using FBCOMSystemManagement.Models;
+using FBCOMSystemManagement.VIEWMODEL;
+using Syncfusion.DocIO.DLS;
+using System.Drawing.Printing;
 
 namespace FBCOMSystemManagement.Controllers
 {
@@ -19,12 +22,24 @@ namespace FBCOMSystemManagement.Controllers
             _context = context;
         }
 
-        // GET: CPE
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> Index(int page=1)
         {
-              return View(await _context.CPES.Where(m=>m.Installed=="NON").ToListAsync());
-        }
 
+           
+            var totalItems = _context.CPES.ToList().Count();
+            var pager = new Pager(totalItems,page,2);
+
+            var model = new CPEVM();
+            model.pager = pager;
+            var items = await _context.CPES.Where(m => m.Installed == "NON").Skip((page - 1) * (int)model.pager.PageSize)
+                .Take((int)model.pager.PageSize).ToListAsync();
+  
+                model.ListCPE=items;
+       
+         
+            return View(model);
+        }
         // GET: CPE/Details/5
         public async Task<IActionResult> Details(int? id)
         {

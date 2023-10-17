@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FBCOMSystemManagement.DATA;
 using FBCOMSystemManagement.Models;
+using Syncfusion.DocIO.DLS;
 
 namespace FBCOMSystemManagement.Controllers
 {
@@ -20,9 +21,19 @@ namespace FBCOMSystemManagement.Controllers
         }
 
         // GET: Telephone
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page)
         {
-              return View(await _context.Telephones.Where(m => m.Installed == "NON").ToListAsync());
+      
+            var pageResults = 3f;
+            var totalItems = _context.Telephones.ToList().Count();
+            var pageCount = Math.Ceiling(totalItems / pageResults);
+           
+            var Telephones = await _context.Telephones.Where(m => m.Installed == "NON").Skip((page - 1) * (int)pageResults)
+                .Take((int)pageResults).ToListAsync();
+
+            ViewData["pageCount"] = pageCount;
+
+            return View(Telephones);
         }
 
         // GET: Telephone/Details/5
